@@ -122,6 +122,7 @@ details[open] summary::after { transform: rotate(45deg); }
 .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 24px; min-width: 0; }
 .panel h3 { font-size: 20px; margin-bottom: 8px; }
 .panel p { margin: 0 0 14px; color: var(--muted); }
+.panel .btn { margin-top: 2px; }
 
 /* Contact */
 .contact { margin-block: 64px; background: var(--ink); color: var(--bg); border-radius: 16px; padding: 40px clamp(20px, 5vw, 48px); display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; }
@@ -187,12 +188,6 @@ footer { padding-block: 0 40px; color: var(--muted); font-size: 13px; text-align
   .skills { grid-template-columns: 1fr; }
   nav ul { display: none; }
 }
-.proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.proj-grid .model p { color: var(--muted); }
-.proj-grid .chips { gap: 6px; margin-top: auto; }
-.proj-grid .chip { font-size: 11.5px; padding: 3px 9px; }
-@media (max-width: 860px) { .proj-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 560px) { .proj-grid { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 
@@ -203,7 +198,6 @@ footer { padding-block: 0 40px; color: var(--muted); font-size: 13px; text-align
       <li><a href="#about">About</a></li>
       <li><a href="#risk">Risk</a></li>
       <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#credentials">Education</a></li>
@@ -228,9 +222,7 @@ footer { padding-block: 0 40px; color: var(--muted); font-size: 13px; text-align
         <span class="chip">AI automation</span>
       </div>
       <div class="btns">
-        <a class="btn primary" href="#contact">Get in touch</a>
-        <a class="btn ghost" href="https://www.linkedin.com/in/iadilrafi" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn ghost" href="https://medium.com/@adil.rafi" target="_blank" rel="noopener">Blog</a>
+        <a class="btn primary" href="https://github.com/adilr433/portfolio/tree/main/quantkit" target="_blank" rel="noopener">GitHub Repo</a>
       </div>
     </div>
   </header>
@@ -371,58 +363,6 @@ footer { padding-block: 0 40px; color: var(--muted); font-size: 13px; text-align
 
   </section>
 
-  <section id="projects">
-    <div class="sec-head"><span class="label">Projects</span><h2>QuantPortfolio</h2></div>
-    <p class="risk-intro">A hands-on quantitative finance toolkit I built to cover the full research workflow: generating signals, building portfolios, measuring risk, pricing derivatives and applying machine learning to financial data. It also includes TradeSense, a prototype app for real-time market data, portfolio tracking, charting and watchlist alerts.</p>
-    <div class="proj-grid">
-      <article class="model">
-        <div class="model-head"><h3>Algorithmic trading</h3><span class="kind">Signals</span></div>
-        <p>Moving-average crossover strategy that generates long/short signals from historical prices and tracks position changes for backtesting.</p>
-        <div class="chips"><span class="chip">Python</span><span class="chip">pandas</span></div>
-      </article>
-      <article class="model">
-        <div class="model-head"><h3>Portfolio optimization</h3><span class="kind">Allocation</span></div>
-        <p>Mean-variance optimization with convex solvers, plus risk metrics (volatility, Sharpe, drawdown) to compare allocations.</p>
-        <div class="chips"><span class="chip">Python</span><span class="chip">CVXPY</span><span class="chip">NumPy</span></div>
-      </article>
-      <article class="model">
-        <div class="model-head"><h3>Risk modeling</h3><span class="kind">VaR</span></div>
-        <p>Value-at-risk three ways: variance-covariance, historical simulation and Monte Carlo, alongside a factor model and stress tests.</p>
-        <div class="chips"><span class="chip">JavaScript</span><span class="chip">Monte Carlo</span></div>
-      </article>
-      <article class="model">
-        <div class="model-head"><h3>Option pricing</h3><span class="kind">Valuation</span></div>
-        <p>Black-Scholes-Merton pricer for calls and puts, built to compare model value against market prices and flag mispricings.</p>
-        <div class="chips"><span class="chip">Python</span><span class="chip">SciPy</span></div>
-      </article>
-      <article class="model">
-        <div class="model-head"><h3>Market microstructure</h3><span class="kind">Liquidity</span></div>
-        <p>Order-flow, bid-ask spread and price-impact analysis on high-frequency trade data, including large-order impact.</p>
-        <div class="chips"><span class="chip">Python</span><span class="chip">Matplotlib</span></div>
-      </article>
-      <article class="model">
-        <div class="model-head"><h3>Event study</h3><span class="kind">Abnormal returns</span></div>
-        <p>Measures abnormal returns around earnings, M&amp;A and macro announcements against a benchmark and tests their significance.</p>
-        <div class="chips"><span class="chip">Python</span><span class="chip">SciPy stats</span></div>
-      </article>
-      <article class="model">
-        <div class="model-head"><h3>Factor analysis</h3><span class="kind">Factors</span></div>
-        <p>Extracts latent return drivers with factor analysis on standardized data, with an alternative-method comparison.</p>
-        <div class="chips"><span class="chip">scikit-learn</span><span class="chip">factor_analyzer</span></div>
-      </article>
-      <article class="model">
-        <div class="model-head"><h3>NLP &amp; sentiment</h3><span class="kind">Text</span></div>
-        <p>TF-IDF + Multinomial Naive Bayes classifier for financial text, evaluated on precision, recall and F1.</p>
-        <div class="chips"><span class="chip">NLTK</span><span class="chip">scikit-learn</span></div>
-      </article>
-      <article class="model">
-        <div class="model-head"><h3>Machine learning in finance</h3><span class="kind">ML</span></div>
-        <p>Credit-risk scoring, loan-default prediction, fraud and anomaly detection, time-series forecasting and a robo-advisory prototype.</p>
-        <div class="chips"><span class="chip">Python</span><span class="chip">Node.js</span><span class="chip">Express</span></div>
-      </article>
-    </div>
-  </section>
-
   <section id="experience">
     <div class="sec-head"><span class="label">Experience</span><h2>Where I've worked</h2></div>
 
@@ -510,12 +450,12 @@ footer { padding-block: 0 40px; color: var(--muted); font-size: 13px; text-align
   </section>
 
   <section id="writing">
-    <div class="sec-head"><span class="label">Beyond work</span><h2>Writing &amp; community</h2></div>
+    <div class="sec-head"><span class="label">Beyond work</span><h2>Code &amp; community</h2></div>
     <div class="two">
       <div class="panel">
-        <h3>Blog on Medium</h3>
-        <p>Since mid-2023 I've been publishing short, practical posts drawn from my experience in delivery, fintech and capital markets.</p>
-        <a href="https://medium.com/@adil.rafi" target="_blank" rel="noopener">Read on medium.com/@adil.rafi →</a>
+        <h3>QuantKit</h3>
+        <p>My quant research code, open on GitHub, so you can see how I build and test models.</p>
+        <a class="btn primary" href="https://github.com/adilr433/portfolio/tree/main/quantkit" target="_blank" rel="noopener">GitHub Repo →</a>
       </div>
       <div class="panel">
         <h3>Community</h3>
@@ -534,7 +474,7 @@ footer { padding-block: 0 40px; color: var(--muted); font-size: 13px; text-align
       <div class="c-item"><div><span class="k">Email</span><span class="v">adil.rafi@outlook.com</span></div><button class="copy" type="button" data-copy="adil.rafi@outlook.com">Copy</button></div>
       <div class="c-item"><div><span class="k">Phone</span><span class="v">+91 97173 00989</span></div><button class="copy" type="button" data-copy="+919717300989">Copy</button></div>
       <div class="c-item"><div><span class="k">LinkedIn</span><a class="v" href="https://www.linkedin.com/in/iadilrafi" target="_blank" rel="noopener">linkedin.com/in/iadilrafi</a></div></div>
-      <div class="c-item"><div><span class="k">Blog</span><a class="v" href="https://medium.com/@adil.rafi" target="_blank" rel="noopener">medium.com/@adil.rafi</a></div></div>
+      <div class="c-item"><div><span class="k">GitHub</span><a class="v" href="https://github.com/adilr433/portfolio/tree/main/quantkit" target="_blank" rel="noopener">github.com/adilr433/portfolio</a></div></div>
     </div>
   </section>
 </main>
